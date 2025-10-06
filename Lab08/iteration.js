@@ -21,7 +21,7 @@ function contract(fn, ...types) {
     const expectedArgsCount = types.length - 1;
     if (args.length !== expectedArgsCount) {
       throw new TypeError(
-        `Ожидалось ${expectedArgsCount} аргументов, получено ${args.length}`
+        `Очікувалось ${expectedArgsCount} аргументів, отримано ${args.length}`
       );
     }
 
@@ -30,7 +30,7 @@ function contract(fn, ...types) {
       const actual = typeof args[i];
       if (actual !== expected) {
         throw new TypeError(
-          `Аргумент №${i + 1} должен быть типа ${expected}, получен ${actual}`
+          `Аргумент №${i + 1} повинен бути типа ${expected}, отримано ${actual}`
         );
       }
     }
@@ -41,7 +41,7 @@ function contract(fn, ...types) {
     const actualResult = typeof result;
     if (actualResult !== expectedResult) {
       throw new TypeError(
-        `Результат должен быть типа ${expectedResult}, получен ${actualResult}`
+        `Результат повинен бути типа ${expectedResult}, отримано ${actualResult}`
       );
     }
 
